@@ -1,6 +1,15 @@
 FROM ubuntu:12.04
 MAINTAINER Petr Šebek <petrsebek1@gmail.com>
 
+# Docker image with Bob repository
+# Examples of usage:
+
+# docker run -d 8888:8888 -v <<DIRECTORY_AT_HOST>:/data artimi/bob
+# Runs Ipython notebook at localhost:8888 with bob installed. DIRECTORY_AT_HOST is mapped to /data in container
+
+# docker run -ti -v <DIRECTORY_AT_HOST>:/data artimi/bob /bin/sh
+# Runs container in interactive session and you can run Ipython or python scripts
+
 RUN apt-get update
 
 # for install add-apt-repository command
